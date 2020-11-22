@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ernestoadv/tsplayer": "^1.0.1"
+    "@ernestoadv/tsplayer": "^1.0.3"
   },
   "devDependencies": {
     "typescript": "^4.1.2"
