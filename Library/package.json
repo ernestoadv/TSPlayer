@@ -1,0 +1,15 @@
+{
+  "name": "@ernestoadv/tsplayer",
+  "version": "1.0.1",
+  "description": "TypeScript Video Player library based on dash.js.",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "author": "Ernesto Aranda del Valle",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.1.2"
+  }
+}
