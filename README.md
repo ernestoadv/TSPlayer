@@ -15,6 +15,11 @@ TypeScript Video Player library based on dash.js.
 	6. stop()
 	7. destroy()
 	
+## Usage
+
+- To install the library use the following command: npm i @ernestoadv/tsplayer
+- To test the video player, go to /Project/src and open the file 'index.html'.
+	
 ## References
 
 Sample video:
