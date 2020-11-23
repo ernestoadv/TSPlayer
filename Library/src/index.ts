@@ -42,8 +42,7 @@ export function open(videoURL:string) {
  * 
  */
 export function play() {
-    if(player.isReady())
-        player.play();
+    player.play();
 }
 
 /**
@@ -100,3 +99,5 @@ export function stop() {
 export function destroy() {
     player.reset();
 }
+
+player.play()

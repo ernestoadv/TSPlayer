@@ -1,0 +1,19 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+main {
+	background-color: black;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#player {
+	width: 640px;
+	height: 360px;
+	margin-top: 20vh;
+	border: 2px solid;
+	border-color: gray;
+}
