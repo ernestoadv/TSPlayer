@@ -17,3 +17,13 @@ main {
 	border: 2px solid;
 	border-color: gray;
 }
+
+#videoController {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 2vh;
+}
+
+#seek-at {
+	width: 70px;
+}

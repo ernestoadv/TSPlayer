@@ -7,7 +7,17 @@
 		<header></header>
 		<main>
 			<div id="player">
-				<video id="videoPlayer" controls></video>
+				<video id="videoPlayer"></video>
+				<div id="videoController">
+					<button id='play'>Play</button>
+					<button id='pause'>Pause</button>
+					<div>
+						<button id='seek'>Seek</button>
+						<input type="number" id="seek-at" name="seek-at" min="0">
+					</div>
+					<button id='stop'>Stop</button>
+					<button id='destroy'>Destroy</button>
+				</div>
 			</div>
 		</main>
 		<footer></footer>
