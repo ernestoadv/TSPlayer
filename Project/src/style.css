@@ -10,7 +10,7 @@ main {
 	justify-content: center;
 }
 
-#player {
+#videoPlayer {
 	width: 640px;
 	height: 360px;
 	margin-top: 20vh;

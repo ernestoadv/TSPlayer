@@ -3,6 +3,6 @@
     "live-server": "^1.2.1"
   },
   "dependencies": {
-    "@ernestoadv/tsplayer": "^1.0.3"
+    "@ernestoadv/tsplayer": "^1.0.7"
   }
 }

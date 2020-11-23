@@ -16,6 +16,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var dash = __importStar(require("dashjs"));
 //Create MediaPlayer object
 var player = dash.MediaPlayer().create();
+var container = null;
+var video = null;
 //Create APIs
 /**
  * Sets the container to be used by the Media Player
@@ -24,11 +26,10 @@ var player = dash.MediaPlayer().create();
  *
  */
 function setContainer(divID) {
-    var container = document.getElementById(divID);
-    if (!container) {
-        throw new Error("Element " + divID + "not found.");
+    container = document.getElementById(divID);
+    if (container != null && video != null) {
+        player.initialize(container, video);
     }
-    player.attachView(container);
 }
 exports.setContainer = setContainer;
 /**
@@ -38,7 +39,10 @@ exports.setContainer = setContainer;
  *
  */
 function open(videoURL) {
-    player.attachSource(videoURL);
+    video = videoURL;
+    if (container != null) {
+        player.initialize(container, video);
+    }
 }
 exports.open = open;
 /**
@@ -47,8 +51,7 @@ exports.open = open;
  *
  */
 function play() {
-    if (player.isReady())
-        player.play();
+    player.play();
 }
 exports.play = play;
 /**

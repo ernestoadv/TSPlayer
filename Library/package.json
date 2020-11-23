@@ -1,6 +1,6 @@
 {
   "name": "@ernestoadv/tsplayer",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "TypeScript Video Player library based on dash.js.",
   "main": "lib/index.js",
   "types": "lib",

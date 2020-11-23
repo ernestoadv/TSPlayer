@@ -17,6 +17,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var dash = __importStar(require("dashjs"));
 //Create MediaPlayer object
 var player = dash.MediaPlayer().create();
+var container = null;
+var video = null;
 //Create APIs
 /**
  * Sets the container to be used by the Media Player
@@ -25,11 +27,10 @@ var player = dash.MediaPlayer().create();
  *
  */
 function setContainer(divID) {
-    var container = document.getElementById(divID);
-    if (!container) {
-        throw new Error("Element " + divID + "not found.");
+    container = document.getElementById(divID);
+    if (container != null && video != null) {
+        player.initialize(container, video);
     }
-    player.attachView(container);
 }
 exports.setContainer = setContainer;
 /**
@@ -39,7 +40,10 @@ exports.setContainer = setContainer;
  *
  */
 function open(videoURL) {
-    player.attachSource(videoURL);
+    video = videoURL;
+    if (container != null) {
+        player.initialize(container, video);
+    }
 }
 exports.open = open;
 /**
@@ -48,8 +52,7 @@ exports.open = open;
  *
  */
 function play() {
-    if (player.isReady())
-        player.play();
+    player.play();
 }
 exports.play = play;
 /**
@@ -20570,13 +20573,11 @@ exports.renderHTML = require('./html').render;
 
 }).call(this)}).call(this,require("buffer").Buffer)
 },{"buffer":223,"stream":229,"string_decoder":244}],220:[function(require,module,exports){
-const { play, setContainer } = require('@ernestoadv/tsplayer/lib')
+const { setContainer, open, play, pause, stop, seek, destroy } = require('@ernestoadv/tsplayer/lib')
+setContainer('videoPlayer')
+open('https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps_640x360_800k.mpd')
 
-var tsplayer = require('@ernestoadv/tsplayer').default
-setContainer('player')
-open('https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps_640x360_800k.mp4')
-play()
-},{"@ernestoadv/tsplayer":1,"@ernestoadv/tsplayer/lib":1}],221:[function(require,module,exports){
+},{"@ernestoadv/tsplayer/lib":1}],221:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
